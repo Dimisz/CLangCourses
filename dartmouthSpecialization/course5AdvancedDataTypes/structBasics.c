@@ -18,6 +18,17 @@ int main(void){
     printStudent(me);
     printStudent(someone);
     
+    struct student learner;
+    printf("Enter student data:\n");
+    printf("Enter first name: ");
+    scanf("%s", learner.firstName);
+    printf("Enter last name: ");
+    scanf("%s", learner.lastName);
+    printf("Enter birth year: ");
+    scanf("%d", &learner.birthYear);
+    printf("Enter average grade: ");
+    scanf("%lf", &learner.averageGrade);
+    printStudent(learner);
     return 0;
 }
 
