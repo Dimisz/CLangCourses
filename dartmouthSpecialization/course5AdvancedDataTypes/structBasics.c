@@ -10,6 +10,7 @@ struct student{
 
 //function prototypes
 void printStudent(struct student);
+void getStudent(struct student *);
 
 int main(void){
     struct student me = {"Vladimir", "Solovyov", 1987, 3.5};
@@ -19,17 +20,22 @@ int main(void){
     printStudent(someone);
     
     struct student learner;
-    printf("Enter student data:\n");
-    printf("Enter first name: ");
-    scanf("%s", learner.firstName);
-    printf("Enter last name: ");
-    scanf("%s", learner.lastName);
-    printf("Enter birth year: ");
-    scanf("%d", &learner.birthYear);
-    printf("Enter average grade: ");
-    scanf("%lf", &learner.averageGrade);
+    getStudent(&learner);
+    
     printStudent(learner);
     return 0;
+}
+
+void getStudent(struct student *studentptr){
+    printf("Enter student record:\n");
+    printf("Enter first name: ");
+    scanf("%s", (*studentptr).firstName);
+    printf("Enter last name: ");
+    scanf("%s", (*studentptr).lastName);
+    printf("Enter birth year: ");
+    scanf("%d", &(*studentptr).birthYear);
+    printf("Enter average grade: ");
+    scanf("%lf", &(*studentptr).averageGrade);
 }
 
 void printStudent(struct student st){
