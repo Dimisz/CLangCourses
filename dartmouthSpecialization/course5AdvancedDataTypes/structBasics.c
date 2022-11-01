@@ -29,13 +29,17 @@ int main(void){
 void getStudent(struct student *studentptr){
     printf("Enter student record:\n");
     printf("Enter first name: ");
-    scanf("%s", (*studentptr).firstName);
+    //scanf("%s", (*studentptr).firstName);
+    scanf("%s", studentptr->firstName);
     printf("Enter last name: ");
-    scanf("%s", (*studentptr).lastName);
+    //scanf("%s", (*studentptr).lastName);
+    scanf("%s", studentptr->lastName);
     printf("Enter birth year: ");
-    scanf("%d", &(*studentptr).birthYear);
+    //scanf("%d", &(*studentptr).birthYear);
+    scanf("%d", &studentptr->birthYear);
     printf("Enter average grade: ");
-    scanf("%lf", &(*studentptr).averageGrade);
+    //scanf("%lf", &(*studentptr).averageGrade);
+    scanf("%lf", &studentptr->averageGrade);
 }
 
 void printStudent(struct student st){
